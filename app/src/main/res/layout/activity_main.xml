@@ -87,13 +87,16 @@
 
     <EditText
         android:id="@+id/symbol_input"
+        android:maxLines="1"
         android:layout_width="158dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="52dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="112dp"
         app:layout_constraintBottom_toTopOf="@+id/symbol"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/enter_symbol"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -102,19 +105,26 @@
         android:layout_width="wrap_content"
         android:layout_height="16dp"
         android:layout_marginEnd="152dp"
+        android:layout_marginStart="16dp"
         android:text="(symbol)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/symbol_label"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
 
     <TextView
         android:id="@+id/lastTradePrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="104dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="(last trade price)"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/lastTradePrice_label"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <TextView
@@ -122,21 +132,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="108dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:text="(last trade time)"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lastTradeTime_label"
         app:layout_constraintTop_toBottomOf="@+id/lastTradePrice" />
 
     <TextView
         android:id="@+id/range"
-        android:layout_width="wrap_content"
+        android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="112dp"
         android:layout_marginEnd="160dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="(range)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/range_label"
         app:layout_constraintTop_toBottomOf="@+id/change" />
 
     <TextView
@@ -144,19 +159,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="152dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:text="(change)"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/change_label"
         app:layout_constraintTop_toBottomOf="@+id/lastTradeTime" />
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="wrap_content"
+        android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="164dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="(name)"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/name_label"
         app:layout_constraintTop_toBottomOf="@+id/symbol" />
 
 </android.support.constraint.ConstraintLayout>

@@ -8,8 +8,10 @@ import android.util.Log;
 
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
 import java.net.*;
 import java.io.*;
+import java.util.ArrayList;
 
 
 public class Stock implements Serializable
@@ -36,7 +38,8 @@ public class Stock implements Serializable
     }
 
 
-    public void load() throws MalformedURLException, IOException {
+    public ArrayList<String> load() throws MalformedURLException, IOException {
+        ArrayList<String> views = new ArrayList<String>();
 
         URL url = new URL("https://api.iextrading.com/1.0/stock/" + symbol + "/book");
 
@@ -89,25 +92,31 @@ public class Stock implements Serializable
 
             if (DEBUG)
                 Log.i(TAG_PREFIX + "Stock.load()", "name = " + name);
+                views.add(name);
 
             //***ADDED CODE BELOW THIS LINE TO END OF METHOD
 
             if (DEBUG)
                 Log.i(TAG_PREFIX + "Stock.load()", "symbol = " + symbol);
+                views.add(symbol);
 
             if (DEBUG)
                 Log.i(TAG_PREFIX + "Stock.load()", "lastTradePrice = " + getLastTradePrice());
+                views.add(getLastTradePrice());
 
             if (DEBUG)
                 Log.i(TAG_PREFIX + "Stock.load()", "lastTradeTime = " + getLastTradeTime());
+                views.add(getLastTradeTime());
 
             if (DEBUG)
                 Log.i(TAG_PREFIX + "Stock.load()", "change = " + getChange());
+                views.add(getChange());
 
             if (DEBUG)
                 Log.i(TAG_PREFIX + "Stock.load()", "range = " + getRange());
-
+                views.add(getRange());
         }
+        return views;
     }
 
 
